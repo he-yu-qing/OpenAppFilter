@@ -13,7 +13,7 @@ define KernelPackage/oaf
   CATEGORY:=TT Apps
   TITLE:=OAF kernel DPI driver
   FILES:=$(PKG_BUILD_DIR)/oaf.ko 
-  DEPENDS:=+kmod-ipt-conntrack
+  DEPENDS:=
   KCONFIG:=
   # AUTOLOAD:=$(call AutoLoad,0,$(PKG_AUTOLOAD))
 endef
