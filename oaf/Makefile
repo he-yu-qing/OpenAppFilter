@@ -9,13 +9,14 @@ PKG_AUTOLOAD:=oaf
 RSTRIP:=:
 
 define KernelPackage/oaf
-  SECTION:=TT Apps
-  CATEGORY:=TT Apps
+  SECTION:=kernel
+  CATEGORY:=Kernel modules
+  SUBMENU:=Netfilter Extensions
   TITLE:=OAF kernel DPI driver
   FILES:=$(PKG_BUILD_DIR)/oaf.ko 
-  DEPENDS:=+kmod-nf-conntrack
+  DEPENDS:=+kmod-ipt-conntrack
   KCONFIG:=
-  # AUTOLOAD:=$(call AutoLoad,0,$(PKG_AUTOLOAD))
+  AUTOLOAD:=$(call AutoLoad,30,$(PKG_AUTOLOAD)) # 取消注释，30是加载优先级
 endef
 
 define KernelPackage/oaf/description
